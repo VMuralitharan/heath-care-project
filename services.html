@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Health Care Services</title>
+    <style>
+      /* Unique services page styles */
+      .services-page__hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('https://images.unsplash.com/photo-1576091160550-2173dba999ef') center/cover no-repeat;
+        padding: 8rem 0;
+        text-align: center;
+        color: white;
+      }
+      
+      .services-page__hero h2 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .services-page__hero p {
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        font-size: 1.2rem;
+      }
+      
+      .services-page__container {
+        padding: 5rem 0;
+      }
+      
+      .services-page__section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      
+      .services-page__section-title h3 {
+        font-size: 2.5rem;
+        color: #1d4e89;
+        margin-bottom: 1rem;
+      }
+      
+      .services-page__section-title p {
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      
+      .services-page__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+      
+      .services-page__card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      
+      .services-page__card:hover {
+        transform: translateY(-10px);
+      }
+      
+      .services-page__card-img {
+        height: 200px;
+        overflow: hidden;
+      }
+      
+      .services-page__card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      
+      .services-page__card:hover .services-page__card-img img {
+        transform: scale(1.1);
+      }
+      
+      .services-page__card-content {
+        padding: 1.5rem;
+      }
+      
+      .services-page__card-content h4 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #1d4e89;
+      }
+      
+      .services-page__card-content p {
+        color: #666;
+        margin-bottom: 1.5rem;
+      }
+      
+      .services-page__card-content a {
+        display: inline-block;
+        color: #1d4e89;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      
+      .services-page__card-content a:hover {
+        color: #0d2b4e;
+      }
+      
+      .services-page__card-content a i {
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+      }
+      
+      .services-page__card-content a:hover i {
+        transform: translateX(5px);
+      }
+      
+      .services-page__specialists {
+        background: #f8f9fa;
+        padding: 5rem 0;
+      }
+      
+      .services-page__specialist-card {
+        text-align: center;
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 2rem;
+      }
+      
+      .services-page__specialist-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 1.5rem;
+        border: 5px solid #e9f2fb;
+      }
+      
+      .services-page__specialist-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .services-page__specialist-card h4 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        color: #1d4e89;
+      }
+      
+      .services-page__specialist-card p {
+        color: #666;
+        margin-bottom: 1rem;
+      }
+      
+      .services-page__specialist-social {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+      
+      .services-page__specialist-social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        background: #e9f2fb;
+        border-radius: 50%;
+        color: #1d4e89;
+        transition: all 0.3s ease;
+      }
+      
+      .services-page__specialist-social a:hover {
+        background: #1d4e89;
+        color: white;
+      }
+      
+      .services-page__cta {
+        background: linear-gradient(rgba(29, 78, 137, 0.9), rgba(29, 78, 137, 0.9)), 
+                    url('https://images.unsplash.com/photo-1579684385127-1ef15d508118') center/cover no-repeat;
+        padding: 5rem 0;
+        text-align: center;
+        color: white;
+      }
+      
+      .services-page__cta h3 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .services-page__cta p {
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        font-size: 1.2rem;
+      }
+      
+      .services-page__cta-btn {
+        display: inline-block;
+        background: white;
+        color: #1d4e89;
+        padding: 0.8rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      
+      .services-page__cta-btn:hover {
+        background: #e9f2fb;
+        transform: translateY(-3px);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="section__container nav__container">
+        <div class="nav__logo">Health<span>Care</span></div>
+        <ul class="nav__links">
+          <li class="link"><a href="./index.html">Home</a></li>
+          <li class="link"><a href="./about.html">About Us</a></li>
+          <li class="link"><a href="#">Services</a></li>
+          <li class="link"><a href="#">Pages</a></li>
+          <li class="link"><a href="#">Blog</a></li>
+        </ul>
+        <button class="btn"><a href="./logout.html">Logout</a></button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="services-page__hero">
+        <div class="section__container">
+          <h2>Our Comprehensive Healthcare Services</h2>
+          <p>Discover our wide range of medical services designed to meet all your healthcare needs. Our team of specialists is dedicated to providing exceptional care with the latest medical technologies.</p>
+          <button class="btn">Schedule an Appointment</button>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="services-page__container section__container">
+        <div class="services-page__section-title">
+          <h3>Our Medical Services</h3>
+          <p>We offer a complete spectrum of healthcare services to address all aspects of your wellbeing, from preventive care to specialized treatments.</p>
+        </div>
+
+        <div class="services-page__grid">
+          <div class="services-page__card">
+            <div class="services-page__card-img">
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d" alt="Cardiology">
+            </div>
+            <div class="services-page__card-content">
+              <h4>Cardiology</h4>
+              <p>Comprehensive heart care including diagnostic tests, preventive cardiology, and advanced treatments for heart conditions.</p>
+              <a href="#">Learn More <i class="ri-arrow-right-line"></i></a>
+            </div>
+          </div>
+
+          <div class="services-page__card">
+            <div class="services-page__card-img">
+              <img src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0" alt="Neurology">
+            </div>
+            <div class="services-page__card-content">
+              <h4>Neurology</h4>
+              <p>Expert diagnosis and treatment for disorders of the nervous system, including stroke, epilepsy, and migraines.</p>
+              <a href="#">Learn More <i class="ri-arrow-right-line"></i></a>
+            </div>
+          </div>
+
+          <div class="services-page__card">
+            <div class="services-page__card-img">
+              <img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322" alt="Orthopedics">
+            </div>
+            <div class="services-page__card-content">
+              <h4>Orthopedics</h4>
+              <p>Specialized care for bones, joints, ligaments, tendons, muscles and nerves with both surgical and non-surgical approaches.</p>
+              <a href="#">Learn More <i class="ri-arrow-right-line"></i></a>
+            </div>
+          </div>
+
+          <div class="services-page__card">
+            <div class="services-page__card-img">
+              <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe" alt="Pediatrics">
+            </div>
+            <div class="services-page__card-content">
+              <h4>Pediatrics</h4>
+              <p>Compassionate healthcare for infants, children and adolescents, focusing on growth, development and disease prevention.</p>
+              <a href="#">Learn More <i class="ri-arrow-right-line"></i></a>
+            </div>
+          </div>
+
+          <div class="services-page__card">
+            <div class="services-page__card-img">
+              <img src="https://images.unsplash.com/photo-1579165466741-6eb9a6d94e1e" alt="Dermatology">
+            </div>
+            <div class="services-page__card-content">
+              <h4>Dermatology</h4>
+              <p>Diagnosis and treatment of skin conditions, including medical, surgical and cosmetic dermatology services.</p>
+              <a href="#">Learn More <i class="ri-arrow-right-line"></i></a>
+            </div>
+          </div>
+
+          <div class="services-page__card">
+            <div class="services-page__card-img">
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef" alt="Emergency Care">
+            </div>
+            <div class="services-page__card-content">
+              <h4>Emergency Care</h4>
+              <p>24/7 emergency services with rapid response for acute illnesses and injuries requiring immediate medical attention.</p>
+              <a href="#">Learn More <i class="ri-arrow-right-line"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Specialists Section -->
+      <section class="services-page__specialists">
+        <div class="section__container">
+          <div class="services-page__section-title">
+            <h3>Meet Our Specialists</h3>
+            <p>Our team of board-certified physicians and healthcare professionals are leaders in their fields, committed to delivering exceptional patient care.</p>
+          </div>
+
+          <div class="services-page__grid">
+            <div class="services-page__specialist-card">
+              <div class="services-page__specialist-img">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Dr. Sarah Johnson">
+              </div>
+              <h4>Dr. Sarah Johnson</h4>
+              <p>Cardiologist</p>
+              <p>15 years of experience in interventional cardiology</p>
+              <div class="services-page__specialist-social">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+                <a href="#"><i class="ri-linkedin-fill"></i></a>
+              </div>
+            </div>
+
+            <div class="services-page__specialist-card">
+              <div class="services-page__specialist-img">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Michael Chen">
+              </div>
+              <h4>Dr. Michael Chen</h4>
+              <p>Neurologist</p>
+              <p>Specializes in stroke prevention and treatment</p>
+              <div class="services-page__specialist-social">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+                <a href="#"><i class="ri-linkedin-fill"></i></a>
+              </div>
+            </div>
+
+            <div class="services-page__specialist-card">
+              <div class="services-page__specialist-img">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Priya Patel">
+              </div>
+              <h4>Dr. Priya Patel</h4>
+              <p>Pediatrician</p>
+              <p>Expert in childhood development and nutrition</p>
+              <div class="services-page__specialist-social">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+                <a href="#"><i class="ri-linkedin-fill"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="services-page__cta">
+        <div class="section__container">
+          <h3>Ready to Take the Next Step Toward Better Health?</h3>
+          <p>Our patient care coordinators are available to help you schedule appointments, answer questions about our services, and guide you through your healthcare journey.</p>
+          <a href="#" class="services-page__cta-btn">Contact Us Today</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h3>Health<span>Care</span></h3>
+          <p>
+            We are honored to be a part of your healthcare journey and committed
+            to delivering compassionate, personalized, and top-notch care every
+            step of the way.
+          </p>
+          <p>
+            Trust us with your health, and let us work together to achieve the
+            best possible outcomes for you and your loved ones.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>About Us</h4>
+          <p>Home</p>
+          <p>About Us</p>
+          <p>Work With Us</p>
+          <p>Our Blog</p>
+          <p>Terms & Conditions</p>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <p>Search Terms</p>
+          <p>Advance Search</p>
+          <p>Privacy Policy</p>
+          <p>Suppliers</p>
+          <p>Our Stores</p>
+        </div>
+        <div class="footer__col">
+          <h4>Contact Us</h4>
+          <p>
+            <i class="ri-map-pin-2-fill"></i> main street jaffna
+          </p>
+          <p><i class="ri-mail-fill"></i> support@care.com</p>
+          <p><i class="ri-phone-fill"></i> (+94)1234567 </p>
+        </div>
+      </div>
+      <div class="footer__bar">
+        <div class="footer__bar__content">
+          <div class="footer__socials">
+            <span><i class="ri-instagram-line"></i></span>
+            <span><i class="ri-facebook-fill"></i></span>
+            <span><i class="ri-heart-fill"></i></span>
+            <span><i class="ri-twitter-fill"></i></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      if (!localStorage.getItem('isLoggedIn')) {
+          window.location.href = 'login.html'; 
+      }
+    </script>
+  </body>
+</html>
