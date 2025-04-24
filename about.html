@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>About Health Care</title>
+    <style>
+      .about-page__hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d') center/cover no-repeat;
+        padding: 8rem 0;
+        text-align: center;
+        color: white;
+      }
+      
+      .about-page__hero h2 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .about-page__hero p {
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        font-size: 1.2rem;
+      }
+      
+      .about-page__mission {
+        padding: 5rem 0;
+        background: #f8f9fa;
+      }
+      
+      .about-page__mission-container {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+      }
+      
+      .about-page__mission-content {
+        flex: 1;
+      }
+      
+      .about-page__mission-image {
+        flex: 1;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      .about-page__mission-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      
+      .about-page__section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      
+      .about-page__section-title h3 {
+        font-size: 2.5rem;
+        color: #1d4e89;
+        margin-bottom: 1rem;
+      }
+      
+      .about-page__section-title p {
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      
+      .about-page__values {
+        padding: 5rem 0;
+      }
+      
+      .about-page__values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+      
+      .about-page__value-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+      
+      .about-page__value-card:hover {
+        transform: translateY(-10px);
+      }
+      
+      .about-page__value-icon {
+        width: 80px;
+        height: 80px;
+        background: #e9f2fb;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        color: #1d4e89;
+        font-size: 2rem;
+      }
+      
+      .about-page__value-card h4 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: #1d4e89;
+      }
+      
+      .about-page__timeline {
+        padding: 5rem 0;
+        background: #f8f9fa;
+      }
+      
+      .about-page__timeline-item {
+        display: flex;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+      
+      .about-page__timeline-year {
+        flex: 0 0 150px;
+        text-align: right;
+        padding-right: 2rem;
+        position: relative;
+      }
+      
+      .about-page__timeline-year h4 {
+        font-size: 1.5rem;
+        color: #1d4e89;
+      }
+      
+      .about-page__timeline-content {
+        flex: 1;
+        padding-left: 2rem;
+        border-left: 2px solid #1d4e89;
+        position: relative;
+      }
+      
+      .about-page__timeline-content h5 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .about-page__timeline-item:last-child {
+        margin-bottom: 0;
+      }
+      
+      .about-page__timeline-item::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background: #1d4e89;
+        border-radius: 50%;
+        position: absolute;
+        left: 145px;
+        top: 5px;
+      }
+      
+      .about-page__team {
+        padding: 5rem 0;
+      }
+      
+      .about-page__team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+      
+      .about-page__team-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+      
+      .about-page__team-card:hover {
+        transform: translateY(-10px);
+      }
+      
+      .about-page__team-image {
+        height: 250px;
+        overflow: hidden;
+      }
+      
+      .about-page__team-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      
+      .about-page__team-card:hover .about-page__team-image img {
+        transform: scale(1.1);
+      }
+      
+      .about-page__team-info {
+        padding: 1.5rem;
+      }
+      
+      .about-page__team-info h4 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        color: #1d4e89;
+      }
+      
+      .about-page__team-info p {
+        color: #666;
+        margin-bottom: 1rem;
+      }
+      
+      .about-page__team-social {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+      
+      .about-page__team-social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        background: #e9f2fb;
+        border-radius: 50%;
+        color: #1d4e89;
+        transition: all 0.3s ease;
+      }
+      
+      .about-page__team-social a:hover {
+        background: #1d4e89;
+        color: white;
+      }
+      
+      @media (max-width: 768px) {
+        .about-page__mission-container {
+          flex-direction: column;
+        }
+        
+        .about-page__timeline-item {
+          flex-direction: column;
+        }
+        
+        .about-page__timeline-year {
+          text-align: left;
+          padding-right: 0;
+          margin-bottom: 1rem;
+        }
+        
+        .about-page__timeline-content {
+          padding-left: 1rem;
+          border-left: none;
+          border-top: 2px solid #1d4e89;
+          padding-top: 1rem;
+        }
+        
+        .about-page__timeline-item::before {
+          left: 0;
+          top: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="section__container nav__container">
+        <div class="nav__logo">Health<span>Care</span></div>
+        <ul class="nav__links">
+          <li class="link"><a href="./index.html">Home</a></li>
+          <li class="link"><a href="#">About Us</a></li>
+          <li class="link"><a href="./services.html">Services</a></li>
+          <li class="link"><a href="#">Pages</a></li>
+          <li class="link"><a href="#">Blog</a></li>
+        </ul>
+        <button class="btn"><a href="./logout.html">Logout</a></button>
+      </nav>
+    </header>
+
+    <main>
+      
+      <section class="about-page__hero">
+        <div class="section__container">
+          <h2>About HealthCare</h2>
+          <p>For over 20 years, we've been providing exceptional healthcare services to our community with compassion, innovation, and dedication to excellence.</p>
+        </div>
+      </section>
+
+      <section class="about-page__mission">
+        <div class="section__container about-page__mission-container">
+          <div class="about-page__mission-content">
+            <div class="about-page__section-title">
+              <h3>Our Mission & Vision</h3>
+            </div>
+            <p>At HealthCare, our mission is to provide accessible, high-quality healthcare services that improve the lives of our patients and the communities we serve. We believe in treating the whole person, not just the illness, with compassion and respect.</p>
+            <p>Our vision is to be the leading healthcare provider in the region, recognized for clinical excellence, innovative treatments, and outstanding patient experiences. We strive to create a healthier community through prevention, education, and comprehensive care.</p>
+            <button class="btn">Learn More About Us</button>
+          </div>
+          <div class="about-page__mission-image">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118" alt="Healthcare team">
+          </div>
+        </div>
+      </section>
+
+      <section class="about-page__values">
+        <div class="section__container">
+          <div class="about-page__section-title">
+            <h3>Our Core Values</h3>
+            <p>These fundamental principles guide everything we do at HealthCare and shape our culture of caring.</p>
+          </div>
+          
+          <div class="about-page__values-grid">
+            <div class="about-page__value-card">
+              <div class="about-page__value-icon">
+                <i class="ri-heart-pulse-fill"></i>
+              </div>
+              <h4>Compassion</h4>
+              <p>We treat every patient with empathy, kindness, and respect, understanding that healthcare is deeply personal.</p>
+            </div>
+            
+            <div class="about-page__value-card">
+              <div class="about-page__value-icon">
+                <i class="ri-medal-fill"></i>
+              </div>
+              <h4>Excellence</h4>
+              <p>We are committed to the highest standards of medical care, continuous improvement, and clinical innovation.</p>
+            </div>
+            
+            <div class="about-page__value-card">
+              <div class="about-page__value-icon">
+                <i class="ri-team-fill"></i>
+              </div>
+              <h4>Teamwork</h4>
+              <p>We collaborate across disciplines to provide comprehensive, coordinated care for our patients.</p>
+            </div>
+            
+            <div class="about-page__value-card">
+              <div class="about-page__value-icon">
+                <i class="ri-shield-check-fill"></i>
+              </div>
+              <h4>Integrity</h4>
+              <p>We uphold the highest ethical standards, earning trust through honesty, transparency, and accountability.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-page__timeline">
+        <div class="section__container">
+          <div class="about-page__section-title">
+            <h3>Our Journey</h3>
+            <p>From humble beginnings to becoming a regional healthcare leader, our story is one of growth and commitment to our community.</p>
+          </div>
+          
+          <div class="about-page__timeline-content">
+            <div class="about-page__timeline-item">
+              <div class="about-page__timeline-year">
+                <h4>2002</h4>
+              </div>
+              <div class="about-page__timeline-content">
+                <h5>Foundation</h5>
+                <p>HealthCare was founded by Dr. Robert Smith with a small clinic in downtown Jaffna, focusing on primary care services for the local community.</p>
+              </div>
+            </div>
+            
+            <div class="about-page__timeline-item">
+              <div class="about-page__timeline-year">
+                <h4>2008</h4>
+              </div>
+              <div class="about-page__timeline-content">
+                <h5>First Expansion</h5>
+                <p>We opened our first specialty center, adding cardiology and pediatrics services to meet growing community needs.</p>
+              </div>
+            </div>
+            
+            <div class="about-page__timeline-item">
+              <div class="about-page__timeline-year">
+                <h4>2014</h4>
+              </div>
+              <div class="about-page__timeline-content">
+                <h5>Hospital Opening</h5>
+                <p>Our 100-bed main hospital facility opened, offering comprehensive inpatient and outpatient services with advanced technology.</p>
+              </div>
+            </div>
+            
+            <div class="about-page__timeline-item">
+              <div class="about-page__timeline-year">
+                <h4>2020</h4>
+              </div>
+              <div class="about-page__timeline-content">
+                <h5>Pandemic Response</h5>
+                <p>We led the regional COVID-19 response, establishing testing centers and vaccination clinics while maintaining all essential services.</p>
+              </div>
+            </div>
+            
+            <div class="about-page__timeline-item">
+              <div class="about-page__timeline-year">
+                <h4>2023</h4>
+              </div>
+              <div class="about-page__timeline-content">
+                <h5>Telehealth Launch</h5>
+                <p>Implemented our comprehensive telehealth platform, expanding access to care for rural and homebound patients.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-page__team">
+        <div class="section__container">
+          <div class="about-page__section-title">
+            <h3>Meet Our Leadership</h3>
+            <p>Our experienced leadership team guides HealthCare with vision and dedication to our mission.</p>
+          </div>
+          
+          <div class="about-page__team-grid">
+            <div class="about-page__team-card">
+              <div class="about-page__team-image">
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Dr. Robert Smith">
+              </div>
+              <div class="about-page__team-info">
+                <h4>Dr. Robert Smith</h4>
+                <p>Founder & Chief Medical Officer</p>
+                <div class="about-page__team-social">
+                  <a href="#"><i class="ri-linkedin-fill"></i></a>
+                  <a href="#"><i class="ri-twitter-fill"></i></a>
+                  <a href="#"><i class="ri-mail-fill"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="about-page__team-card">
+              <div class="about-page__team-image">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
+              </div>
+              <div class="about-page__team-info">
+                <h4>Sarah Johnson</h4>
+                <p>Chief Executive Officer</p>
+                <div class="about-page__team-social">
+                  <a href="#"><i class="ri-linkedin-fill"></i></a>
+                  <a href="#"><i class="ri-twitter-fill"></i></a>
+                  <a href="#"><i class="ri-mail-fill"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="about-page__team-card">
+              <div class="about-page__team-image">
+                <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Dr. Michael Chen">
+              </div>
+              <div class="about-page__team-info">
+                <h4>Dr. Michael Chen</h4>
+                <p>Chief of Staff</p>
+                <div class="about-page__team-social">
+                  <a href="#"><i class="ri-linkedin-fill"></i></a>
+                  <a href="#"><i class="ri-twitter-fill"></i></a>
+                  <a href="#"><i class="ri-mail-fill"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="about-page__team-card">
+              <div class="about-page__team-image">
+                <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Priya Patel">
+              </div>
+              <div class="about-page__team-info">
+                <h4>Priya Patel</h4>
+                <p>Director of Nursing</p>
+                <div class="about-page__team-social">
+                  <a href="#"><i class="ri-linkedin-fill"></i></a>
+                  <a href="#"><i class="ri-twitter-fill"></i></a>
+                  <a href="#"><i class="ri-mail-fill"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h3>Health<span>Care</span></h3>
+          <p>
+            We are honored to be a part of your healthcare journey and committed
+            to delivering compassionate, personalized, and top-notch care every
+            step of the way.
+          </p>
+          <p>
+            Trust us with your health, and let us work together to achieve the
+            best possible outcomes for you and your loved ones.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>About Us</h4>
+          <p>Home</p>
+          <p>About Us</p>
+          <p>Work With Us</p>
+          <p>Our Blog</p>
+          <p>Terms & Conditions</p>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <p>Search Terms</p>
+          <p>Advance Search</p>
+          <p>Privacy Policy</p>
+          <p>Suppliers</p>
+          <p>Our Stores</p>
+        </div>
+        <div class="footer__col">
+          <h4>Contact Us</h4>
+          <p>
+            <i class="ri-map-pin-2-fill"></i> main street jaffna
+          </p>
+          <p><i class="ri-mail-fill"></i> support@care.com</p>
+          <p><i class="ri-phone-fill"></i> (+94)1234567 </p>
+        </div>
+      </div>
+      <div class="footer__bar">
+        <div class="footer__bar__content">
+          <div class="footer__socials">
+            <span><i class="ri-instagram-line"></i></span>
+            <span><i class="ri-facebook-fill"></i></span>
+            <span><i class="ri-heart-fill"></i></span>
+            <span><i class="ri-twitter-fill"></i></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      if (!localStorage.getItem('isLoggedIn')) {
+          window.location.href = 'login.html'; 
+      }
+    </script>
+  </body>
+</html>
